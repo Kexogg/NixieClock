@@ -1,0 +1,5 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "SN74141N")(type "KiCad")(uri "C:/Users/kexogg/Downloads/SN74141N/SN74141N.kicad_sym")(options "")(descr ""))
+  (lib (name "IN-14")(type "KiCad")(uri "${KIPRJMOD}/IN-14.kicad_sym")(options "")(descr ""))
+)

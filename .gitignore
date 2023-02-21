@@ -1,0 +1,29 @@
+.pio
+.vscode
+
+# Temporary files
+Kicad/*.000
+Kicad/*.bak
+Kicad/*.bck
+Kicad/*.Kicad_pcb-bak
+Kicad/*.Kicad_sch-bak
+Kicad/*-backups
+Kicad/*.Kicad_prl
+Kicad/*.sch-bak
+Kicad/*~
+Kicad/_autosave-*
+Kicad/*.tmp
+Kicad/*-save.pro
+Kicad/*-save.Kicad_pcb
+Kicad/fp-info-cache
+
+# Netlist files (exported from Eeschema)
+Kicad/*.net
+
+# Autorouter files (exported from Pcbnew)
+Kicad/*.dsn
+Kicad/*.ses
+
+# Exported BOM files
+Kicad/*.xml
+Kicad/*.csv
