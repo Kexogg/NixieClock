@@ -11,7 +11,7 @@ Lamp::Lamp(int pin)
 void Lamp::toggle()
 {
     setState(!_state);
-};
+}
 void Lamp::setState(bool state)
 {
     _state = state;

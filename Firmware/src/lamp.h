@@ -7,7 +7,7 @@ public:
     Lamp(int pin);
     void toggle();
     void setState(bool state);
-    bool isOn() { return _state; };
+    bool isOn() { return _state; }
 
 private:
     int _pin;

@@ -1,14 +1,15 @@
 #pragma once
+#include <vector>
 class Decoder
 {
 public:
 	Decoder();
-	Decoder(int pins[], byte *digitMask);
+	Decoder(std::vector<int> pins, std::vector<int> digitMask);
 	int getCurrentDigit() { return currentDigit; };
 	void setDigit(int digit);
-	void writeData(byte data);
+
 private:
-	byte* _digitMask;
+	std::vector<int> _digitMask;
+	std::vector<int> _pins;
 	int currentDigit = 0;
-	int* _pins;
 };

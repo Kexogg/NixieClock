@@ -1,26 +1,19 @@
 #include <Arduino.h>
 #include "config.h"
-/*#include "lamp.h"
-#include "power.h"*/
 #include "display.h"
 
-Display display(config.lampPins, config.decoderPins, config.generator, 0, config.frequency, config.duty);
+Display *display;
 
 void setup()
 {
-  int data[4] = {0, 0, 0, 0};
-  display.setData(data);
+  display = new Display(config.lampPins, config.decoderPins, config.digitMask, config.generator, 1, config.frequency, config.duty);
+  pinMode(15, OUTPUT);
+  digitalWrite(15, 1);
+  std::vector<int> data = {1, 1, 1, 1};
+  display->setData(data);
 }
 
 void loop()
 {
-  display.cycle();
-  /*int data[4] = {sussy / 1000 % 10, sussy / 100 % 10, sussy / 10 % 10, sussy % 10}; // TODO
-  for (int i = 0; i < sizeof(lamps)/sizeof(*lamps); i++)
-  {
-    lamps[i].setDigit(data[i]);
-    delay(1);
-    lamps[i].toggle(1);
-  };
-  sussy += 1;*/
-};
+  display->cycle();
+}

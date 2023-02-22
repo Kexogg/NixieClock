@@ -4,18 +4,17 @@
 #include "lamp.h"
 #include "decoder.h"
 
-class Display {
+class Display
+{
 public:
-    //Display(Lamp *lamps, Decoder *decoder, Powerline *powerline);
-    Display(int lampPins[], int decoderPins[], int PowerlinePin, int channel, int frequency, int duty);
-    
+    Display(std::vector<int> lampPins, std::vector<int> decoderPins, std::vector<int> digitMask, int powerlinePin, int channel, int frequency, int duty);
     void cycle();
-    void setData(int data[]);
+    void setData(std::vector<int> data);
     void setBrightness(int brightness);
-private:
-
     std::vector<Lamp> _lamps;
+
+private:
     std::vector<int> _data;
-    Powerline _powerline;
-    Decoder _decoder;
+    Powerline *_powerline;
+    Decoder *_decoder;
 };
