@@ -3,9 +3,12 @@
 class Config
 {
 public:
+    const char *ssid = "";
+    const char *password = "";
+
     int delay = 1;
     int frequency = 30000;
-    int duty = 150;
+    int duty = 180;
     int resolution = 8;
     int generator = 9;
 

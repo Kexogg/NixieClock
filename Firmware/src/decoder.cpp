@@ -12,11 +12,14 @@ Decoder::Decoder(std::vector<int> pins, std::vector<int> digitMask)
 
 void Decoder::setDigit(int digit)
 {
-    if (digit >= 0 and digit <= 9 and currentDigit != digit)
+    if (digit >= 0 and digit <= 9)
     {
         delay(1);
-        currentDigit = digit;
-        for (int i = 0; i < _pins.size(); i++)
-            digitalWrite(_pins[i], bitRead(_digitMask[currentDigit], i));
+        if (digit != currentDigit)
+        {
+            currentDigit = digit;
+            for (int i = 0; i < _pins.size(); i++)
+                digitalWrite(_pins[i], bitRead(_digitMask[currentDigit], i));
+        }
     }
 }
